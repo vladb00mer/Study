@@ -6,6 +6,7 @@ public class Class {
     private String className;
     private int classChiefID;
     
+    
     public Class(int id, String name, int chiefID) {
     
         setClassID(id);           
