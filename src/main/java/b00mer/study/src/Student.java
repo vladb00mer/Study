@@ -1,19 +1,20 @@
 package b00mer.study.src;
 
-public class Student {
+public final class Student {
 
     private int studentID;
     private String studentName;
     private String studentLastName;
     private String studentMidName;
+    private int studentClassID;
     
-    public Student(int id, String name, String lastName, String midName) {
+    public Student(int id, String name, String lastName, String midName, int classID) {
     
         setStudentID(id);
         setStudentName(name);
         setStudentLastName(lastName);
         setStudentMidName(midName);
-                
+        setStudentClassID(classID);
     }
 
     public int getStudentID() {
@@ -47,5 +48,12 @@ public class Student {
     public final void setStudentMidName(String studentMidName) {
         this.studentMidName = studentMidName;
     }
-    
+
+    public int getStudentClassID() {
+        return studentClassID;
+    }
+
+    public void setStudentClassID(int studentClassID) {
+        this.studentClassID = studentClassID;
+    }
 }

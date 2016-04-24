@@ -1,19 +1,18 @@
 package b00mer.study.src;
 
-public class Course {
+public final class Course {
 
     private int courseID;
     private String courseName;
-    private String courseChief;
+    private int courseChiefID;
     private String courseLong;
     
-    public Course(int id, String name, String chief, String cLong) {
+    public Course(int id, String name, int chiefID, String cLong) {
 
         setCourseID(id);
         setCourseName(name);
-        setCourseChief(chief);
+        setCourseChiefID(chiefID);
         setCourseLong(cLong);
-    
     } 
 
     public int getCourseID() {
@@ -32,14 +31,6 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public String getCourseChief() {
-        return courseChief;
-    }
-
-    public final void setCourseChief(String courseChief) {
-        this.courseChief = courseChief;
-    }
-
     public String getCourseLong() {
         return courseLong;
     }
@@ -47,6 +38,12 @@ public class Course {
     public final void setCourseLong(String courseLong) {
         this.courseLong = courseLong;
     }
-    
-    
+
+    public int getCourseChiefID() {
+        return courseChiefID;
+    }
+
+    public void setCourseChiefID(int courseChiefID) {
+        this.courseChiefID = courseChiefID;
+    }
 }

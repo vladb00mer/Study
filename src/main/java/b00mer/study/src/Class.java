@@ -1,17 +1,18 @@
 package b00mer.study.src;
 
+import java.util.ArrayList;
+
 public class Class {
 
     private int classID;
-    private String className;
     private int classChiefID;
+    private ArrayList classCourses;
     
     
-    public Class(int id, String name, int chiefID) {
+    public Class(int id, int chiefID) {
     
-        setClassID(id);           
-        setClassName(name);        
-        setClassChiefID(chiefID);        
+        setClassID(id);            
+        setClassChiefID(chiefID); 
                 
     }
 
@@ -23,14 +24,6 @@ public class Class {
         this.classID = classID;
     }
 
-    public String getClassName() {
-        return className;
-    }
-
-    public final void setClassName(String className) {
-        this.className = className;
-    }
-
     public int getClassChiefID() {
         return classChiefID;
     }
@@ -38,7 +31,12 @@ public class Class {
     public final void setClassChiefID(int classChiefID) {
         this.classChiefID = classChiefID;
     }
-    
-    
-    
+
+    public ArrayList getClassCourses() {
+        return classCourses;
+    }
+
+    public final void setClassCourses(ArrayList classCourses) {
+        this.classCourses = classCourses;
+    }
 }
