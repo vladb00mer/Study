@@ -8,7 +8,7 @@ public class DatabaseConnector {
     private String dbName;
     private String dbLogin;
     private String dbPassword;
-    
+       
     public DatabaseConnector(String name, String login, String password) {
     
         setDbName(name);
