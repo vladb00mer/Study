@@ -1,5 +1,8 @@
 package b00mer.study.src;
 
+import javax.ejb.Stateless;
+
+@Stateless
 public final class Student {
 
     private int studentID;

@@ -1,7 +1,9 @@
 package b00mer.study.src;
 
 import java.util.ArrayList;
+import javax.ejb.Stateless;
 
+@Stateless
 public class Class {
 
     private int classID;
