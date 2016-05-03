@@ -1,4 +1,4 @@
-package b00mer.study.gui;
+package b00mer.study.view;
 
 public class MainWindow extends javax.swing.JFrame {
 

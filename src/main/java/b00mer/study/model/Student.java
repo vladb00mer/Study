@@ -1,4 +1,4 @@
-package b00mer.study.src;
+package b00mer.study.model;
 
 import javax.ejb.Stateless;
 

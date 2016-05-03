@@ -1,4 +1,4 @@
-package b00mer.study.src;
+package b00mer.study.model;
 
 import java.util.ArrayList;
 import javax.ejb.Stateless;

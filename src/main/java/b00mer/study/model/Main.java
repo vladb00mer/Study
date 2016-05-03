@@ -1,6 +1,6 @@
-package b00mer.study.src;
+package b00mer.study.model;
 
-import b00mer.study.gui.MainWindow;
+import b00mer.study.view.MainWindow;
 
 public class Main {
 
