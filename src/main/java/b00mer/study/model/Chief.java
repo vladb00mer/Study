@@ -1,8 +1,5 @@
 package b00mer.study.model;
 
-import javax.ejb.Stateless;
-
-@Stateless
 public class Chief {
 
     private int chiefID;
