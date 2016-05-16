@@ -1,6 +1,6 @@
 package b00mer.study.model;
 
-public final class Student {
+public class Student {
 
     private int studentID;
     private String studentName;
@@ -53,7 +53,7 @@ public final class Student {
         return studentClassID;
     }
 
-    public void setStudentClassID(int studentClassID) {
+    public final void setStudentClassID(int studentClassID) {
         this.studentClassID = studentClassID;
     }
 }
