@@ -7,6 +7,9 @@ public class Class {
     private int classID;
     private int classChiefID;
     private ArrayList classCourses;
+
+    public Class() {
+    }
     
     
     public Class(int id, int chiefID) {
