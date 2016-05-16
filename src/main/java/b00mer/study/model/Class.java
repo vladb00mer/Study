@@ -8,15 +8,10 @@ public class Class {
     private int classChiefID;
     private ArrayList classCourses;
 
-    public Class() {
-    }
-    
-    
     public Class(int id, int chiefID) {
     
         setClassID(id);            
-        setClassChiefID(chiefID); 
-                
+        setClassChiefID(chiefID);                 
     }
 
     public int getClassID() {
