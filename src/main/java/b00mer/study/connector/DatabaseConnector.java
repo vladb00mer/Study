@@ -1,19 +1,17 @@
 package b00mer.study.connector;
 
-import javax.ejb.Stateful;
-import javax.jms.Connection;
-
-@Stateful
 public class DatabaseConnector {
     
     private String dbName;
     private String dbLogin;
     private String dbPassword;
+    private String dbHost;
+    private int dbPort;
     
-    private Connection dbConnection;
-       
-    public DatabaseConnector(String name, String login, String password) {
+    public DatabaseConnector(String host, int port, String name, String login, String password) {
     
+        setDbHost(host);
+        setDbPort(port);
         setDbName(name);
         setDbLogin(login);   
         setDbPassword(password);                
@@ -43,17 +41,19 @@ public class DatabaseConnector {
         this.dbPassword = dbPassword;
     }
 
-    /**
-     * @return the dbConnection
-     */
-    public Connection getDbConnection() {
-        return dbConnection;
+    public String getDbHost() {
+        return dbHost;
     }
 
-    /**
-     * @param dbConnection the dbConnection to set
-     */
-    public void setDbConnection(Connection dbConnection) {
-        this.dbConnection = dbConnection;
+    public final void setDbHost(String dbHost) {
+        this.dbHost = dbHost;
+    }
+
+    public int getDbPort() {
+        return dbPort;
+    }
+
+    public final void setDbPort(int dbPort) {
+        this.dbPort = dbPort;
     }
 }
