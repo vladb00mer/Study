@@ -1,40 +1,28 @@
 package b00mer.study.model;
 
-import java.util.ArrayList;
-
 public class Class {
 
-    private int classID;
-    private int classChiefID;
-    private ArrayList classCourses;
+    private String classID;
+    private String classCourse;
 
-    public Class(int id, int chiefID) {
+    public Class(String id, String classCourse) {
     
-        setClassID(id);            
-        setClassChiefID(chiefID);                 
+        setClassID(id);                           
     }
 
-    public int getClassID() {
+    public String getClassID() {
         return classID;
     }
 
-    public final void setClassID(int classID) {
+    public final void setClassID(String classID) {
         this.classID = classID;
     }
 
-    public int getClassChiefID() {
-        return classChiefID;
+    public String getClassCourse() {
+        return classCourse;
     }
 
-    public final void setClassChiefID(int classChiefID) {
-        this.classChiefID = classChiefID;
-    }
-
-    public ArrayList getClassCourses() {
-        return classCourses;
-    }
-
-    public final void setClassCourses(ArrayList classCourses) {
-        this.classCourses = classCourses;
+    public final void setClassCourses(String classCourses) {
+        this.classCourse = classCourses;
     }
 }

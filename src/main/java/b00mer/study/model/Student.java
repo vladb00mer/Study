@@ -2,13 +2,13 @@ package b00mer.study.model;
 
 public class Student {
 
-    private int studentID;
+    private String studentID;
     private String studentName;
     private String studentLastName;
     private String studentMidName;
-    private int studentClassID;
+    private String studentClassID;
     
-    public Student(int id, String name, String lastName, String midName, int classID) {
+    public Student(String id, String name, String lastName, String midName, String classID) {
     
         setStudentID(id);
         setStudentName(name);
@@ -17,11 +17,11 @@ public class Student {
         setStudentClassID(classID);
     }
 
-    public int getStudentID() {
+    public String getStudentID() {
         return studentID;
     }
 
-    public final void setStudentID(int studentID) {
+    public final void setStudentID(String studentID) {
         this.studentID = studentID;
     }
 
@@ -49,11 +49,11 @@ public class Student {
         this.studentMidName = studentMidName;
     }
 
-    public int getStudentClassID() {
+    public String getStudentClassID() {
         return studentClassID;
     }
 
-    public final void setStudentClassID(int studentClassID) {
+    public final void setStudentClassID(String studentClassID) {
         this.studentClassID = studentClassID;
     }
 }

@@ -2,24 +2,26 @@ package b00mer.study.model;
 
 public class Chief {
 
-    private int chiefID;
+    private String chiefID;
     private String chiefLastName;
     private String chiefName;
     private String chiefMidName;
+    private int chiefSalary;
     
-    public Chief(int id, String lastName, String name, String midName){
+    public Chief(String id, String lastName, String name, String midName, int salary){
     
         setChiefID(id);
         setChiefLastName(lastName);
         setChiefName(name);
         setChiefMidName(midName);
+        setChiefSalary(salary);
     }
 
-    public int getChiefID() {
+    public String getChiefID() {
         return chiefID;
     }
 
-    public final void setChiefID(int chiefID) {
+    public final void setChiefID(String chiefID) {
         this.chiefID = chiefID;
     }
 
@@ -45,5 +47,19 @@ public class Chief {
 
     public final void setChiefMidName(String chiefMidName) {
         this.chiefMidName = chiefMidName;
+    }
+
+    /**
+     * @return the chiefSalary
+     */
+    public int getChiefSalary() {
+        return chiefSalary;
+    }
+
+    /**
+     * @param chiefSalary the chiefSalary to set
+     */
+    public final void setChiefSalary(int chiefSalary) {
+        this.chiefSalary = chiefSalary;
     }
 }
