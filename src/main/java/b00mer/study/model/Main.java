@@ -1,14 +1,23 @@
 package b00mer.study.model;
 
-import b00mer.study.view.MainWindow;
+import b00mer.study.connector.DatabaseConnector;
 
 public class Main {
-
+    
+    
     public static void main(String[] args) {
 
-        MainWindow mainWindow = new MainWindow();
+    String url = "jdbc:mysql://localhost:3306/study";
+    String login = "b00mer";
+    String pass = "b00mer@@";
 
-        mainWindow.setVisible(true);
-  
+    DatabaseConnector databaseConnector = new DatabaseConnector(url, login, pass);
+    
+    databaseConnector.setDriver();
+    
+    databaseConnector.setConnection();
+    
+    databaseConnector.closeConnection();
+    
     }
 }
