@@ -1,11 +1,14 @@
 package b00mer.study.model;
 
+import java.util.ArrayList;
+
 public class Class {
 
     private String classID;
-    private String classCourse;
+    private ArrayList classCourses;
+    private Chief classChief;
 
-    public Class(String id, String classCourse) {
+    public Class(String id) {
     
         setClassID(id);                           
     }
@@ -18,11 +21,19 @@ public class Class {
         this.classID = classID;
     }
 
-    public String getClassCourse() {
-        return classCourse;
+    public ArrayList getClassCourse() {
+        return classCourses;
     }
 
-    public final void setClassCourses(String classCourses) {
-        this.classCourse = classCourses;
+    public final void setClassCourses(ArrayList classCourses) {
+        this.classCourses = classCourses;
+    }
+
+    public Chief getClassChief() {
+        return classChief;
+    }
+
+    public void setClassChief(Chief classChief) {
+        this.classChief = classChief;
     }
 }

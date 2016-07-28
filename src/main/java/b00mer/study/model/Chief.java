@@ -6,15 +6,14 @@ public class Chief {
     private String chiefLastName;
     private String chiefName;
     private String chiefMidName;
-    private int chiefSalary;
+    private Double chiefSalary;
     
-    public Chief(String id, String lastName, String name, String midName, int salary){
+    public Chief(String id, String lastName, String name, String midName){
     
         setChiefID(id);
         setChiefLastName(lastName);
         setChiefName(name);
         setChiefMidName(midName);
-        setChiefSalary(salary);
     }
 
     public String getChiefID() {
@@ -49,17 +48,11 @@ public class Chief {
         this.chiefMidName = chiefMidName;
     }
 
-    /**
-     * @return the chiefSalary
-     */
-    public int getChiefSalary() {
+    public Double getChiefSalary() {
         return chiefSalary;
     }
 
-    /**
-     * @param chiefSalary the chiefSalary to set
-     */
-    public final void setChiefSalary(int chiefSalary) {
+    public final void setChiefSalary(Double chiefSalary) {
         this.chiefSalary = chiefSalary;
     }
 }

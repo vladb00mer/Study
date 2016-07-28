@@ -4,14 +4,13 @@ public class Course {
 
     private String courseID;
     private String courseName;
-    private String courseChiefID;
-    private String courseLong;
+    private Chief courseChiefID;
+    private int courseLong;
     
-    public Course(String id, String name, String chiefID, String cLong) {
+    public Course(String id, String name, int cLong) {
 
         setCourseID(id);
         setCourseName(name);
-        setCourseChiefID(chiefID);
         setCourseLong(cLong);
     } 
 
@@ -31,19 +30,19 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public String getCourseLong() {
+    public int getCourseLong() {
         return courseLong;
     }
 
-    public final void setCourseLong(String courseLong) {
+    public final void setCourseLong(int courseLong) {
         this.courseLong = courseLong;
     }
 
-    public String getCourseChiefID() {
+    public Chief getCourseChiefID() {
         return courseChiefID;
     }
 
-    public final void setCourseChiefID(String courseChiefID) {
+    public final void setCourseChiefID(Chief courseChiefID) {
         this.courseChiefID = courseChiefID;
     }
 }

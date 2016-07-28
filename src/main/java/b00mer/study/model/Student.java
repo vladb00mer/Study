@@ -6,15 +6,14 @@ public class Student {
     private String studentName;
     private String studentLastName;
     private String studentMidName;
-    private String studentClassID;
+    private Class studentClass;
     
-    public Student(String id, String name, String lastName, String midName, String classID) {
+    public Student(String id, String name, String lastName, String midName) {
     
         setStudentID(id);
         setStudentName(name);
         setStudentLastName(lastName);
         setStudentMidName(midName);
-        setStudentClassID(classID);
     }
 
     public String getStudentID() {
@@ -49,11 +48,11 @@ public class Student {
         this.studentMidName = studentMidName;
     }
 
-    public String getStudentClassID() {
-        return studentClassID;
+    public Class getStudentClass() {
+        return studentClass;
     }
 
-    public final void setStudentClassID(String studentClassID) {
-        this.studentClassID = studentClassID;
+    public final void setStudentClassID(Class studentClassID) {
+        this.studentClass = studentClassID;
     }
 }
