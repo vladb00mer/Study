@@ -1,92 +1,64 @@
 package b00mer.study.connector;
-
-import com.mysql.jdbc.Driver;
+        
 import java.sql.Connection;
+import java.sql.Driver;
+import com.mysql.fabric.jdbc.FabricMySQLDriver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DatabaseConnector {
     
-    private String dbURL;
-    private String dbLogin;
-    private String dbPassword;
-    private String dbName;
+    private final String dbURL;
+    private final String dbLogin;
+    private final String dbPassword;
     
-    private Connection connection;
-    private Driver driver;
-    
+    private Driver mySQLDriver;
+    private Connection mySQLConnection;
+   
+       
     public DatabaseConnector(String url, String login, String password) {
-    
-        setDbURL(url);
-        setDbLogin(login);   
-        setDbPassword(password);  
+       
+        dbURL = url;
+        dbLogin = login;
+        dbPassword = password;
         
-        //setDriver();
-        //setConnection();
-    }
-    
-    public final void setDriver() {
-        try {
-            driver = new Driver();
-            System.out.println("УСПЕХ при инициализации драйвера SQL");
-        } catch (SQLException ex) {
-            System.out.println("ОШИБКА! при инициализации драйвера SQL");
-        }
-        try {
-            DriverManager.registerDriver(getDriver());
-            System.out.println("УСПЕХ при инициализации драйвера в DriverManager");
-        } catch (SQLException ex) {
-            System.out.println("ОШИБКА! при инициализации драйвера в DriverManager");
-        }
-    }
-    public Driver getDriver() {
-        return driver;
     }
 
-    public final void setConnection() {
+    public void setMySQLDriver() {
         try {
-            connection = DriverManager.getConnection(getDbURL(), getDbLogin(), getDbPassword());
-            System.out.println("УСПЕХ при инициализации соединения");
+            mySQLDriver = new FabricMySQLDriver();
+            DriverManager.registerDriver(mySQLDriver);
+            System.out.println("SUCCESS to create and register Driver");
         } catch (SQLException ex) {
-            System.out.println("ОШИБКА! при инициализации соединения");
+            System.out.println("FAIL! to create and register Driver");
+            Logger.getLogger(DatabaseConnector.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-    }
-    
-    public void closeConnection() {
-        try {
-            connection.close();
-            System.out.println("УСПЕХ при закрытии соединения");
-        } catch (SQLException ex) {
-            System.out.println("ОШИБКА! при закрытии соединения");
-        }
-    }
-    
-    public Connection getConnection() {
-        return connection;
     }    
-    public String getDbName() {
-        return dbName;
+
+    public void setMySQLConnection() {
+        try {
+            mySQLConnection = DriverManager.getConnection(getDbURL(), getDbLogin(), getDbPassword());
+            System.out.println("SUCCESS to create Connection");
+        } catch (SQLException ex) {
+            System.out.println("FAIL! to create Connection");
+            Logger.getLogger(DatabaseConnector.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    public final void setDbName(String dbName) {
-        this.dbName = dbName;
+    public Connection getMySQLConnection() {
+        return mySQLConnection;
     }
-    public String getDbLogin() {
-        return dbLogin;
-    }
-    public final void setDbLogin(String dbLogin) {
-        this.dbLogin = dbLogin;
-    }
-    public String getDbPassword() {
-        return dbPassword;
-    }
-    public final void setDbPassword(String dbPassword) {
-        this.dbPassword = dbPassword;
-    }
+
     public String getDbURL() {
         return dbURL;
     }
-    public final void setDbURL(String dbURL) {
-        this.dbURL = dbURL;
+
+    public String getDbLogin() {
+        return dbLogin;
+    }
+
+    public String getDbPassword() {
+        return dbPassword;
     }
 }
