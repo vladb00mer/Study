@@ -16,7 +16,8 @@ public class Main {
     
     databaseConnector.setMySQLDriver();
     databaseConnector.setMySQLConnection();
-    databaseConnector.getMySQLConnection().close();
+    databaseConnector.putQuery("insert into class values ('cl0001', 'co0001', 'ch0001');");
+    databaseConnector.closeMySQLConnection();
     
     }
 }
