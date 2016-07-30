@@ -5,8 +5,6 @@ import java.sql.Driver;
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class DatabaseConnector {
     
@@ -26,24 +24,20 @@ public class DatabaseConnector {
         
     }
 
-    public void setMySQLDriver() {
-        try {
-            mySQLDriver = new FabricMySQLDriver();
+    public void setMySQLDriver() throws SQLException {
+        
+        mySQLDriver = new FabricMySQLDriver();
             DriverManager.registerDriver(mySQLDriver);
-            System.out.println("SUCCESS to create and register Driver");
-        } catch (SQLException ex) {
-            System.out.println("FAIL! to create and register Driver");
-            Logger.getLogger(DatabaseConnector.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            System.out.println("SUCCESS to create and register Driver");        
     }    
 
-    public void setMySQLConnection() {
-        try {
+    public void setMySQLConnection() throws SQLException {
+        
+        if(mySQLConnection.isClosed()) {
             mySQLConnection = DriverManager.getConnection(getDbURL(), getDbLogin(), getDbPassword());
             System.out.println("SUCCESS to create Connection");
-        } catch (SQLException ex) {
-            System.out.println("FAIL! to create Connection");
-            Logger.getLogger(DatabaseConnector.class.getName()).log(Level.SEVERE, null, ex);
+        } else {
+            System.out.println("Connection is already open");
         }
     }
     public Connection getMySQLConnection() {
