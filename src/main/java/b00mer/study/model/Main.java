@@ -10,6 +10,14 @@ public class Main {
 
     DatabaseConnector databaseConnector = new DatabaseConnector();
     
+    databaseConnector.putQuery("delete from chief where chief_id = 'ch000001';");
+    
+    databaseConnector.putQuery("insert into chief values ('ch000001', 'Ivanov', 'Ivan', 'Petrovich', 120000);");
+    
+    Chief chief = new Chief("select * from chief where chief_salary = 120000");
+    
+    System.out.println(chief.toString());
+    
     databaseConnector.closeMySQLConnection();
     
     }

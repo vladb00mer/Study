@@ -28,10 +28,10 @@ public class Chief {
         
         while (resultSet.next()) {
         
-            setChiefID(resultSet.getNString("chief_id"));
-            setChiefLastName(resultSet.getNString("chief_lastName"));
-            setChiefName(resultSet.getNString("chief_firstName"));
-            setChiefMidName(resultSet.getNString("chief_midName"));
+            setChiefID(resultSet.getString("chief_id"));
+            setChiefLastName(resultSet.getString("chief_lastName"));
+            setChiefName(resultSet.getString("chief_firstName"));
+            setChiefMidName(resultSet.getString("chief_midName"));
             setChiefSalary(resultSet.getDouble("chief_salary"));
         }
     
@@ -40,11 +40,12 @@ public class Chief {
     @Override
     public String toString() {
     
-        return "ID: " + getChiefID() + 
+        return "\nCHIEF PERSONAL: \n" +  
+               "ID: " + getChiefID() + "\n" + 
                "Last Name: " + getChiefLastName() + "\n" +
                "First Name: " + getChiefName() + "\n" + 
                "Mid Name: " + getChiefMidName() + "\n" +
-               "Salary: " + getChiefSalary() + "roubles \n";
+               "Salary: " + getChiefSalary() + " roubles \n";
     }
 
     public String getChiefID() {
