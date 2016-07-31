@@ -25,7 +25,26 @@ public class Chief {
         DatabaseConnector dbConnector = new DatabaseConnector();
                 
         ResultSet resultSet = dbConnector.getMySQLStatement().executeQuery(dbQuery);
+        
+        while (resultSet.next()) {
+        
+            setChiefID(resultSet.getNString("chief_id"));
+            setChiefLastName(resultSet.getNString("chief_lastName"));
+            setChiefName(resultSet.getNString("chief_firstName"));
+            setChiefMidName(resultSet.getNString("chief_midName"));
+            setChiefSalary(resultSet.getDouble("chief_salary"));
+        }
     
+    }
+    
+    @Override
+    public String toString() {
+    
+        return "ID: " + getChiefID() + 
+               "Last Name: " + getChiefLastName() + "\n" +
+               "First Name: " + getChiefName() + "\n" + 
+               "Mid Name: " + getChiefMidName() + "\n" +
+               "Salary: " + getChiefSalary() + "roubles \n";
     }
 
     public String getChiefID() {

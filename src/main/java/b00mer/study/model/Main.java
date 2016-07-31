@@ -10,7 +10,6 @@ public class Main {
 
     DatabaseConnector databaseConnector = new DatabaseConnector();
     
-    databaseConnector.putQuery("delete from class where chief_id = 'ch0001';");
     databaseConnector.closeMySQLConnection();
     
     }
