@@ -1,5 +1,9 @@
 package b00mer.study.model;
 
+import b00mer.study.connector.DatabaseConnector;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Chief {
 
     private String chiefID;
@@ -8,12 +12,20 @@ public class Chief {
     private String chiefMidName;
     private Double chiefSalary;
     
-    public Chief(String id, String lastName, String name, String midName){
+    public Chief (String id, String lastName, String name, String midName){
     
         setChiefID(id);
         setChiefLastName(lastName);
         setChiefName(name);
         setChiefMidName(midName);
+    }
+    
+    public Chief (String dbQuery) throws SQLException {
+    
+        DatabaseConnector dbConnector = new DatabaseConnector();
+                
+        ResultSet resultSet = dbConnector.getMySQLStatement().executeQuery(dbQuery);
+    
     }
 
     public String getChiefID() {

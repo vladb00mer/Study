@@ -8,15 +8,9 @@ public class Main {
     
     public static void main(String[] args) throws SQLException {
 
-    String url = "jdbc:mysql://localhost:3306/study";
-    String login = "b00mer";
-    String pass = "b00mer@@";
-
-    DatabaseConnector databaseConnector = new DatabaseConnector(url, login, pass);
+    DatabaseConnector databaseConnector = new DatabaseConnector();
     
-    databaseConnector.setMySQLDriver();
-    databaseConnector.setMySQLConnection();
-    databaseConnector.putQuery("insert into class values ('cl0001', 'co0001', 'ch0001');");
+    databaseConnector.putQuery("delete from class where chief_id = 'ch0001';");
     databaseConnector.closeMySQLConnection();
     
     }
