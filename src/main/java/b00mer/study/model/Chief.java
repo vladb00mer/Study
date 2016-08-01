@@ -12,7 +12,7 @@ public class Chief {
     private String chiefMidName;
     private Double chiefSalary;
     
-    public Chief (String id, String lastName, String name, String midName){
+    public Chief(String id, String lastName, String name, String midName){
     
         setChiefID(id);
         setChiefLastName(lastName);
@@ -20,7 +20,7 @@ public class Chief {
         setChiefMidName(midName);
     }
     
-    public Chief (String dbQuery) throws SQLException {
+    public Chief(String dbQuery) throws SQLException {
     
         DatabaseConnector dbConnector = new DatabaseConnector();
                 
@@ -34,7 +34,8 @@ public class Chief {
             setChiefMidName(resultSet.getString("chief_midName"));
             setChiefSalary(resultSet.getDouble("chief_salary"));
         }
-    
+        
+        dbConnector.closeMySQLConnection();
     }
     
     @Override
