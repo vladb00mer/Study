@@ -17,7 +17,12 @@ public class Main {
     databaseConnector.putQuery("insert into student values ('st0001', 'Petr', 'Petrov', 'Ivanovich', 'cl0001');");    
     Student student = new Student("select * from student where student_id = 'st0001';");    
     System.out.println(student.toString());    
-    databaseConnector.putQuery("delete from student where student_id = 'st0001';");*/
+    databaseConnector.putQuery("delete from student where student_id = 'st0001';");
+    
+    databaseConnector.putQuery("insert into course values ('co0001', 'Math', 120, 'ch0001');");    
+    Course course = new Course("select * from course where course_id = 'co0001';");    
+    System.out.println(course.toString());    
+    databaseConnector.putQuery("delete from course where course_id = 'co0001';");*/
     
     databaseConnector.closeMySQLConnection();
     
