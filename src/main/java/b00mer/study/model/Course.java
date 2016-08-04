@@ -46,7 +46,6 @@ public class Course {
                "Long: " + getCourseLong()+ "\n";
     }
 
-
     public String getCourseID() {
         return courseID;
     }
