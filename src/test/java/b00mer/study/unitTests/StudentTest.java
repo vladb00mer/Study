@@ -36,6 +36,5 @@ public class StudentTest {
     
         databaseConnector.putQuery("delete from student where student_id = 'st000001';");
         databaseConnector.closeMySQLConnection();
-    }
-    
+    }    
 }
