@@ -21,13 +21,6 @@ public class ChiefTest {
         databaseConnector.putQuery("insert into chief values ('ch000001', 'Ivanov', 'Ivan', 'Petrovich', 120000);");
     }
     
-    @After
-    public void tearDown() throws SQLException {
-        
-        databaseConnector.putQuery("delete from chief where chief_id = 'ch000001';");
-        databaseConnector.closeMySQLConnection();
-    }
-
     @Test
     public void test() throws SQLException {
     
@@ -38,5 +31,12 @@ public class ChiefTest {
         Assert.assertTrue(chief.getChiefName().equals("Ivan"));
         Assert.assertTrue(chief.getChiefMidName().equals("Petrovich"));    
         Assert.assertTrue(chief.getChiefSalary() == 120000);
+    }
+    
+    @After
+    public void tearDown() throws SQLException {
+        
+        databaseConnector.putQuery("delete from chief where chief_id = 'ch000001';");
+        databaseConnector.closeMySQLConnection();
     }
 }
