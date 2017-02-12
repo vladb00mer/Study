@@ -16,25 +16,20 @@ import org.testng.annotations.Test;
 
 public class ChiefTestNG {
     
-    public ChiefTestNG() {}
-    
     static DatabaseConnector databaseConnector;
-    Chief chief;
+    static Chief chief;
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
         databaseConnector = new DatabaseConnector();
-        
-        databaseConnector.putQuery("delete from chief where chief_id = 'ch000001';");
         databaseConnector.putQuery("insert into chief values ('ch000001', 'Ivanov', 'Ivan', 'Petrovich', 120000);");
-    }
-    
-    @BeforeMethod
-    public void setUpMethod() throws Exception {
         
         chief = new Chief("select * from chief where chief_id = 'ch000001';");
     }
+    
+    @BeforeMethod
+    public void setUpMethod() throws Exception {}
 
     @Test
     public void testChiefID() {
@@ -67,13 +62,12 @@ public class ChiefTestNG {
     }
     
     @AfterMethod
-    public void tearDownMethod() throws Exception {
-        
-        chief = null;
-    }
+    public void tearDownMethod() throws Exception {}
     
     @AfterClass
     public static void tearDownClass() throws Exception {
+        
+        chief = null;
         
         databaseConnector.putQuery("delete from chief where chief_id = 'ch000001';");
         databaseConnector.closeMySQLConnection();
